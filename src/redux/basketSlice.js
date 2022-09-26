@@ -37,7 +37,7 @@ const basketSlice=createSlice({
                     if(d>0)state.discount[0].count=d;
                 }
                 else if(item.id===2){
-                    let d=Math.floor(item.quantity/3)
+                    let d=Math.floor((item.quantity-1)/3)
                     if(d>0)state.discount[1].count=d;
                 }
             }
@@ -58,7 +58,7 @@ const basketSlice=createSlice({
                     state.discount[0].count=d;
                 }
                 else if(item.id===2){
-                    let d=Math.floor(item.quantity/3)
+                    let d=Math.floor((item.quantity-1)/3)
                     state.discount[1].count=d;
                 }
             }
