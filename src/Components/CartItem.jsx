@@ -34,10 +34,11 @@ function CartItem({product,discount}) {
         </div>
       </div>
       <div style={{display:'flex',flexDirection:'column'}}>
-      <span className='price' style={{flex:1,textAlign:'right'}} >€{(product.price*product.quantity).toFixed(2)}</span>
-      {discount?.count>0 &&<span className='price' style={{flex:1,textAlign:'right'}} >
+      <span className='price' style={{flex:1,textAlign:'right',color:discount?.count>0?'red':'black',textDecoration:discount?.count>0?'line-through':'initial'}} >€{(product.price*product.quantity).toFixed(2)}</span>
+      {discount?.count>0 &&
+      <span className='price' style={{flex:1,textAlign:'right'}} >
         €{(product.price*((product.quantity)-(Math.min(discount.count,product.quantity)*discount.value))).toFixed(2) }
-        </span>}
+      </span>}
       </div>
     </div>
   )
